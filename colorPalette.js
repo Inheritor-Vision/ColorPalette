@@ -875,7 +875,12 @@ function extract(imageData, width, height, swatchCount, colorMood){
 
 jimp 	= require("jimp");
 
-f		= process.argv[2];
+if (process.argv[2] == "-v"){
+	console.log("1.0")
+	process.exit()
+}
+
+f	= process.argv[2];
 mode	= process.argv[3];
 count	= process.argv[4];	 
 
