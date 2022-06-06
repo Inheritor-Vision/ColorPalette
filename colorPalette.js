@@ -869,9 +869,8 @@ function ColorToHex(color){
 function extract(imageData, width, height, swatchCount, colorMood){
 	/* imageData: Bitmap, Bitmap.width: int, Bitmap.height: int, swatchcount: int number of colors in output, colorMood: ["bright", "dark", "muted", "deep", "corlorful", "blank"] Default is colorful */
 	var points = extractColorFromImage(imageData, 540, 359, swatchCount, colorMood)
-
-	var palette = points.finalColor.map((fc) => "#" + ColorToHex(fc.rgb.r) + ColorToHex(fc.rgb.g) + ColorToHex(fc.rgb.b) );
-	console.log(JSON.stringify(palette));
+	points.palette = points.finalColor.map((fc) => "#" + ColorToHex(fc.rgb.r) + ColorToHex(fc.rgb.g) + ColorToHex(fc.rgb.b) );
+	console.log(JSON.stringify(points));
 }
 
 jimp 	= require("jimp");
